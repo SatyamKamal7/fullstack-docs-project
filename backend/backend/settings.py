@@ -65,5 +65,13 @@ STATIC_URL = "/static/"
 MEDIA_URL = "/media/"
 MEDIA_ROOT = BASE_DIR / "uploads"
 
-CORS_ALLOW_ALL_ORIGINS = True
+CORS_ALLOWED_ORIGINS = [
+    "http://localhost:5173",
+    "https://fullstack-docs-project.vercel.app",
+]
+CSRF_TRUSTED_ORIGINS = [
+    "https://fullstack-docs-project.vercel.app",
+    "https://*.onrender.com"
+]
+
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
