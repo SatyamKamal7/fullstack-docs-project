@@ -1,0 +1,12 @@
+services:
+  - type: web
+    name: django-backend
+    env: python
+    region: singapore
+    buildCommand: "./backend/.venv/Scripts/python -m pip install -r backend/requirements.txt"
+    startCommand: "gunicorn backend.wsgi:application --chdir backend"
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.11
+      - key: SECRET_KEY
+        value: your-secret-key
